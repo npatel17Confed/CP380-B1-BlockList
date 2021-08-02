@@ -12,8 +12,8 @@ namespace CP380_B1_BlockList
             var myChain = new BlockList();
 
             List<Payload> data = new()
-            { 
-                new Payload("user", TransactionTypes.GRANT, 10, null), 
+            {
+                new Payload("user", TransactionTypes.GRANT, 10, null),
                 new Payload("user", TransactionTypes.BUY, 10, "10C"),
             };
 
@@ -21,9 +21,8 @@ namespace CP380_B1_BlockList
 
             myChain.AddBlock(block);
 
-            var json = JsonSerializer.Serialize(myChain.Chain);
+            var json = JsonSerializer.Serialize(block);
             Console.WriteLine(PrettyJson.MakePretty(json));
-
             Console.WriteLine($"Is the chain valid --> {myChain.IsValid()}");
         }
     }
